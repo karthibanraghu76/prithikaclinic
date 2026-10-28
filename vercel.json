@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "admin.js", "use": "@vercel/node" }
+  ],
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin.js" },
+    { "source": "/admin/(.*)", "destination": "/admin.js" },
+    { "source": "/api/admin/(.*)", "destination": "/admin.js" },
+    { "source": "/(.*)", "destination": "/index.js" }
+  ]
+}
